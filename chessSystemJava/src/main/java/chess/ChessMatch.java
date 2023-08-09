@@ -1,6 +1,7 @@
 package chess;
 
 import boardGame.Board;
+import exceptions.BoardMismatchedSizeException;
 
 public class ChessMatch {
     private final Board board;

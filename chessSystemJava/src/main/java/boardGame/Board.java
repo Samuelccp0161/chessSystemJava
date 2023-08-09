@@ -1,14 +1,19 @@
 package boardGame;
 
+import exceptions.BoardMismatchedSizeException;
+
 public class Board {
     public int rows;
     public int columns;
     public Piece[][] pieces;
 
-    public Board(int rows, int columns) {
+    public Board(int rows, int columns) throws BoardMismatchedSizeException {
         this.rows = rows;
         this.columns = columns;
         pieces = new Piece[rows][columns];
+        if (this.rows != 8 || this.columns != 8){
+            throw new BoardMismatchedSizeException("The board must be 8x8");
+        }
     }
 
     public int getRows() {
