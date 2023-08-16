@@ -12,7 +12,7 @@ public class Main {
 //        System.out.println(position);
 
         ChessMatch chessMatch = new ChessMatch();
-//        chessMatch.initialSetup();
+        chessMatch.initialSetup();
         UI.printBoard(chessMatch.getPieces());
 
     }
