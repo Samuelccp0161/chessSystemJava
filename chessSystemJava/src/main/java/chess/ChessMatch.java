@@ -1,13 +1,17 @@
 package chess;
 
 import boardGame.Board;
+import boardGame.Position;
+import chess.pieces.King;
+import chess.pieces.Rook;
 import exceptions.BoardMismatchedSizeException;
 
 public class ChessMatch {
-    private final Board board;
+    private Board board;
 
     public ChessMatch() {
         board = new Board(8,8);
+//        initialSetup();
     }
     public ChessPiece[][] getPieces(){
         ChessPiece[][] matrix = new ChessPiece[board.getRows()][board.getColumns()];
@@ -17,5 +21,10 @@ public class ChessMatch {
             }
         }
         return matrix;
+    }
+    public void initialSetup(){
+        board.placePiece(new Rook(Color.WHITE, board), new Position(2, 1));
+        board.placePiece(new King(Color.BLACK, board), new Position(0,4));
+        board.placePiece(new King(Color.WHITE, board), new Position(7,4));
     }
 }

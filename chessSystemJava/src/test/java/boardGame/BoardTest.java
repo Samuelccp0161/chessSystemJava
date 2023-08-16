@@ -12,7 +12,7 @@ public class BoardTest {
     public void testSizeBoard() {
         try {
             Board board = new Board(4, 8);
-            fail("Deveria falhar");
+            fail("should fail");
         }catch (BoardMismatchedSizeException e){
             assertEquals("The board must be 8x8", e.getMessage());
         }

@@ -1,10 +1,15 @@
 package chess;
 
+import boardGame.Board;
+import boardGame.Piece;
+import chess.pieces.King;
 import exceptions.BoardMismatchedSizeException;
-import main.UI;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class ChessMatchTest {
     @Test
@@ -12,11 +17,32 @@ public class ChessMatchTest {
         ChessMatch chessMatch = new ChessMatch();
         ChessPiece[][] pieces = chessMatch.getPieces();
 
-        for (int i = 0; i < pieces.length; i++) {
+        for (ChessPiece[] piece : pieces) {
             for (int j = 0; j < pieces.length; j++) {
-                assertTrue(pieces[i][j] == null);
+                assertNull(piece[j]);
+            }
+        }
+    }
+
+    @Test
+    public void testPiecesInSideBoard() {
+        ChessMatch chessMatch = new ChessMatch();
+
+        chessMatch.initialSetup();
+
+        ChessPiece[][] pieces = chessMatch.getPieces();
+        List<ChessPiece> pieceList = new ArrayList<>();
+
+        for (ChessPiece[] piece : pieces) {
+            for (int j = 0; j < pieces.length; j++) {
+                if (piece[j] != null){
+                    pieceList.add(piece[j]);
+                }
             }
         }
 
+        assertEquals("K", pieceList.get(0).toString());
+        assertEquals("R", pieceList.get(1).toString());
+        assertEquals("K", pieceList.get(2).toString());
     }
 }
