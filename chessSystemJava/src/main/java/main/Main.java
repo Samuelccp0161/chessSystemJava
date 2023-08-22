@@ -8,8 +8,8 @@ import exceptions.BoardMismatchedSizeException;
 
 public class Main {
     public static void main(String[] args) throws BoardMismatchedSizeException {
-        Position position = new Position(3, 5);
-        System.out.println(position);
+//        Position position = new Position(3, 5);
+//        System.out.println(position);
 
         ChessMatch chessMatch = new ChessMatch();
         chessMatch.initialSetup();

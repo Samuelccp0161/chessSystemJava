@@ -11,7 +11,6 @@ public class ChessMatch {
 
     public ChessMatch() {
         board = new Board(8,8);
-//        initialSetup();
     }
     public ChessPiece[][] getPieces(){
         ChessPiece[][] matrix = new ChessPiece[board.getRows()][board.getColumns()];

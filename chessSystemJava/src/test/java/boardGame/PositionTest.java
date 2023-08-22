@@ -11,4 +11,5 @@ public class PositionTest {
 
         assertEquals("3, 5", position.toString());
     }
+
 }
