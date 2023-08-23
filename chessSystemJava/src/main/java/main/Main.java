@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws BoardMismatchedSizeException {
 //        Position position = new Position(3, 5);
 //        System.out.println(position);
-
+//        Board board = new Board(8, 8);
         ChessMatch chessMatch = new ChessMatch();
         chessMatch.initialSetup();
         UI.printBoard(chessMatch.getPieces());
